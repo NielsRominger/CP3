@@ -1,9 +1,17 @@
 import './styles.scss';
 
-function Message() {
+interface MessageProps {
+  searchResultNumber: number;
+}
+
+function Message({ searchResultNumber }: MessageProps) {
   return (
     <div className="container">
-      <p className="results">Nombre de retour avec variable</p>
+      <p className="results">
+        {`La recherche a donné
+         ${searchResultNumber}
+        résultats.`}
+      </p>
     </div>
   );
 }
