@@ -1,11 +1,19 @@
-import reactLogo from '../../assets/react.svg';
+import SearchBar from '../SearchBar';
+import Message from '../Message';
 import './styles.scss';
+import ReposResults from '../ReposResults';
 
 function App() {
   return (
     <div className="app">
-      <h1 className="app__title">Vite + React</h1>
-      <img src={reactLogo} alt="react logo" />
+      <img
+        src="src/assets/images/logo-github.png"
+        alt="github logo and title"
+      />
+
+      <SearchBar />
+      <Message />
+      <ReposResults />
     </div>
   );
 }

@@ -1,0 +1,20 @@
+.search_bar {
+  width: 60vw;
+  margin: 0 2rem;
+  padding: 1rem;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.search_field {
+  display: flex;
+  justify-content: center;
+  font-size: 1.4rem;
+  height: 2rem;
+  background-color: #fff;
+  border: 1px solid red;
+  width: 58vw;
+  padding: 1rem 0;
+  padding-left: 1rem;
+}
