@@ -1,9 +1,12 @@
 import { useState, ChangeEvent, FormEvent, useEffect } from 'react';
-import axios, { isCancel, AxiosError } from 'axios';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import axios from 'axios';
 import SearchBar from '../SearchBar';
 import Message from '../Message';
 import './styles.scss';
 import ReposResults from '../ReposResults';
+import Questions from '../Questions';
+import NotFound from '../NotFound';
 
 function App() {
   const [formValue, setFormValue] = useState('');
@@ -54,13 +57,26 @@ function App() {
         alt="github logo and title"
       />
 
-      <SearchBar
-        ValueInSearchBar={formValue}
-        handleOnChangeInput={handleOnChangeInput}
-        handleSubmitFormValue={handleSubmitFormValue}
-      />
-      <Message searchResultNumber={searchResultNumber} />
-      <ReposResults cardsDatas={cardsDatas} />
+      {/* <Message searchResultNumber={searchResultNumber} />
+      <ReposResults cardsDatas={cardsDatas} /> */}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <SearchBar
+                ValueInSearchBar={formValue}
+                handleOnChangeInput={handleOnChangeInput}
+                handleSubmitFormValue={handleSubmitFormValue}
+              />
+              <Message searchResultNumber={searchResultNumber} />
+              <ReposResults cardsDatas={cardsDatas} />
+            </>
+          }
+        />
+        <Route path="/faq" element={<Questions />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </div>
   );
 }

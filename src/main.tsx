@@ -2,11 +2,17 @@
 import ReactDOM from 'react-dom/client';
 // On importe notre composant principal
 import App from './components/App';
-// On importe notre fichier de style global
 import './styles/index.scss';
+import { BrowserRouter } from 'react-router-dom';
 
 // Je créer un root pour mon application (a partir d'un élément HTML)
-const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+const root = ReactDOM.createRoot(
+  document.getElementById('root') as HTMLElement
+);
 
 // On injecte notre application dans le DOM
-root.render(<App />);
+root.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);
